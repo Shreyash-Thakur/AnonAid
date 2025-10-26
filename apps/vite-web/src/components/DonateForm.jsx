@@ -21,6 +21,8 @@ export default function DonateForm() {
         className="input"
         type="number"
         min="0"
+        step="0.01"
+        placeholder="Enter amount in PYUSD"
         value={amount}
         onChange={(e) => setAmount(e.target.value)}
       />
@@ -31,7 +33,7 @@ export default function DonateForm() {
         <button className="btn outline" onClick={() => setAmount('20')}>20</button>
       </div>
 
-      <button className="btn primary full" onClick={handleDonate} disabled={loading}>
+      <button className="btn primary full" onClick={handleDonate} disabled={loading || !amount || amount <= 0}>
         {loading ? 'Processing...' : 'Donate Now'}
       </button>
 
