@@ -1,73 +1,83 @@
-# AnonAid
+# AnonAid - Privacy-Preserving Donation Platform
 
-A Web3 crowdfunding dApp for privacy-preserving donations to sensitive causes. AnonAid pairs donor pseudonymity with radical transparency of funds.
+A Web3 crowdfunding platform that enables privacy-preserving donations to sensitive humanitarian causes using PYUSD stablecoin.
 
-## Overview
+## 🌟 Features
 
-AnonAid allows donors to contribute PYUSD (PayPal USD stablecoin) on Sepolia to a single DonationPool smart contract per cause. The app shows live, verifiable on-chain flows (total raised, recent donations, NGO withdrawals) via an indexer + explorer, while an authorized NGO wallet can withdraw funds with on-chain proofs.
+- **Donor Pseudonymity**: Contributors can donate without revealing their real identity - only wallet addresses are visible on-chain
+- **Radical Transparency**: All donations and withdrawals are permanently recorded on blockchain for complete fund tracking
+- **PYUSD Integration**: Uses PayPal USD stablecoin for stable value donations bridging traditional finance with Web3
+- **NGO Fund Management**: Authorized NGO wallets can withdraw funds with full on-chain transparency
+- **Real-time Analytics**: Live donation tracking and cause progress monitoring
 
-## Architecture
+## 🏗️ Project Structure
 
-The project is structured as a monorepo with the following components:
-
-- `/contracts`: Hardhat v3, Solidity contracts, tests, deployment scripts
-- `/apps/web`: Next.js + React + Wagmi/RainbowKit for wallet connectivity, viem for contract calls
-- `/indexer`: Envio HyperIndex schema + mappings + hosted deployment
-- `/docs`: Documentation, prize checklists, demo script
-
-## Setup
-
-### Prerequisites
-
-- Node.js (v18+)
-- pnpm (v8+)
-- MetaMask or another Ethereum wallet with Sepolia testnet configured
-
-### Environment Variables
-
-Create the following `.env` files:
-
-**contracts/.env**
 ```
-PRIVATE_KEY=your_private_key
-RPC_URL_SEPOLIA=your_sepolia_rpc_url
-ETHERSCAN_KEY=your_etherscan_api_key
+AnonAid/
+├── apps/
+│   ├── web/           # Next.js frontend (original)
+│   └── vite-web/      # Vite + React frontend (demo)
+├── contracts/         # Smart contracts (Hardhat)
+├── indexer/          # Envio indexer configuration
+└── docs/             # Documentation
 ```
 
-**apps/web/.env.local**
-```
-NEXT_PUBLIC_CONTRACT_ADDRESS=deployed_contract_address
-NEXT_PUBLIC_PYUSD_ADDRESS=pyusd_token_address
-NEXT_PUBLIC_ENVIO_URL=your_envio_graphql_endpoint
-```
+## 🚀 Quick Start
 
-### Installation
-
+### Frontend (Vite Demo)
 ```bash
-# Install all dependencies
-pnpm i
+cd apps/vite-web
+npm install
+npm run dev
 ```
 
-### Running the Project
+Visit `http://localhost:5174` to see the demo.
 
+### Smart Contracts
 ```bash
-# Start the Next.js web app
-pnpm -w run dev
-
-# Run contract tests
-pnpm -F contracts run test
-
-# Deploy contracts to Sepolia
-pnpm -F contracts run deploy
-
-# Verify contracts on Sepolia
-pnpm -F contracts run verify
+cd contracts
+npm install
+npx hardhat compile
+npx hardhat test
 ```
 
-## Legal & Ethical Note
+## 🛠️ Technology Stack
 
-AnonAid is a technical demonstration. It provides pseudonymity at the wallet level (not full anonymity). NGOs using this platform should ensure compliance with relevant regulations and perform necessary KYC/AML procedures if required by law. This application does not provide legal advice or ensure regulatory compliance for donation recipients.
+- **Frontend**: Vite + React (JavaScript), Next.js (TypeScript)
+- **Smart Contracts**: Solidity, Hardhat 3
+- **Blockchain**: Ethereum Sepolia Testnet
+- **Token**: PYUSD (PayPal USD)
+- **Indexing**: Envio HyperIndex
+- **Explorer**: Blockscout Integration
 
-## License
+## 📱 Demo
 
-MIT
+The Vite frontend (`apps/vite-web`) provides a fully functional demo with:
+- Mock donation flows
+- Simulated wallet connections
+- Real-time UI updates
+- Responsive design
+
+## 🔒 Privacy & Transparency
+
+AnonAid balances privacy and transparency by:
+- Showing only wallet addresses (not real identities) on-chain
+- Recording all transactions permanently on blockchain
+- Providing NGO withdrawal transparency
+- Enabling cause-specific fund tracking
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## 📄 License
+
+This project is licensed under the MIT License.
+
+## 🏆 Hackathon
+
+Built for Web3 hackathons focusing on social impact and financial inclusion.
