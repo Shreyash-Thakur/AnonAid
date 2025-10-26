@@ -1,0 +1,19 @@
+{
+  "name": "anonaid",
+  "version": "0.1.0",
+  "private": true,
+  "license": "MIT",
+  "workspaces": [
+    "contracts",
+    "apps/web",
+    "indexer"
+  ],
+  "scripts": {
+    "dev": "pnpm -F web run dev",
+    "build": "pnpm -r run build",
+    "test": "pnpm -r run test",
+    "deploy:contracts": "pnpm -F contracts run deploy",
+    "verify:contracts": "pnpm -F contracts run verify",
+    "lint": "pnpm -r run lint"
+  }
+}

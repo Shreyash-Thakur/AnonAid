@@ -1,0 +1,19 @@
+{
+  "name": "anonaid-indexer",
+  "version": "0.1.0",
+  "description": "Envio indexer for AnonAid",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "dev": "echo \"Envio dev command would run here\" && exit 0",
+    "start": "echo \"Envio start command would run here\" && exit 0",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "graphql": "^16.8.1",
+    "graphql-request": "^6.1.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0"
+  }
+}

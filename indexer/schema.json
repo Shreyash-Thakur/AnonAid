@@ -1,0 +1,5 @@
+{
+  "namespace": "anonaid",
+  "version": "0.0.1",
+  "configPath": "./envio.config.ts"
+}

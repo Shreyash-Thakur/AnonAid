@@ -1,0 +1,34 @@
+type Cause @entity {
+  id: ID!
+  contractAddress: String!
+  totalDonated: BigInt!
+  donorCount: Int!
+  donationCount: Int!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  donations: [Donation!]! @derivedFrom(field: "cause")
+  withdrawals: [Withdrawal!]! @derivedFrom(field: "cause")
+}
+
+type Donation @entity {
+  id: ID!
+  cause: Cause!
+  donor: String!
+  amount: BigInt!
+  timestamp: DateTime!
+}
+
+type Withdrawal @entity {
+  id: ID!
+  cause: Cause!
+  amount: BigInt!
+  ngoAddress: String!
+  timestamp: DateTime!
+}
+
+type DonationStat @entity {
+  id: ID!
+  day: String!
+  totalAmount: BigInt!
+  count: Int!
+}
