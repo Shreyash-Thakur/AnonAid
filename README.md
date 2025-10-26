@@ -1,5 +1,10 @@
 # AnonAid - Privacy-Preserving Donation Platform
 
+[![GitHub](https://img.shields.io/badge/GitHub-AnonAid-blue)](https://github.com/Shreyash-Thakur/AnonAid)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Solidity](https://img.shields.io/badge/Solidity-^0.8.19-orange.svg)](https://soliditylang.org/)
+[![PYUSD](https://img.shields.io/badge/Token-PYUSD-yellow.svg)](https://paxos.com/pyusd/)
+
 A Web3 crowdfunding platform that enables privacy-preserving donations to sensitive humanitarian causes using PYUSD stablecoin.
 
 ## 🌟 Features
